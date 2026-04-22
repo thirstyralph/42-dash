@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from . import healthz
-from . import games
+import healthz
+import games
 
 app = FastAPI(title="Dash QTech API", version="0.1.0")
 
