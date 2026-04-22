@@ -1,0 +1,3 @@
+backend/__pycache__/*
+backend/api/games/__pycache__/*
+__pycache__/main.cpython-310.pyc
