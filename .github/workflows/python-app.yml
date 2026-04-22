@@ -1,0 +1,26 @@
+name:  thirstyralph application
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+   steps:
+  - name: Start your services
+    run: docker compose up -d
+
+  - name: Evaluate
+    uses: QTechGames/42-evaluator@master
+    with:
+      backend-url: 'http://localhost:3000'
+      frontend-url: 'http://localhost:5173'
+      team: 'thirstyralph'
