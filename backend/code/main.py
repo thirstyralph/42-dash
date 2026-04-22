@@ -1,9 +1,9 @@
 from fastapi import FastAPI, Query
 from pathlib import Path
 from typing import Any
-import healthz
+import backend.code.healthz as healthz
 import orjson
-import api.games.games
+import backend.code.games.games
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data"
@@ -17,7 +17,7 @@ def hello_() -> set[str]:
 
 
 app.include_router(healthz.router)
-app.include_router(api.games.games.router)
+app.include_router(backend.code.games.games.router)
 
 
 @app.get("/hello")

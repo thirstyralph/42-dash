@@ -1,7 +1,7 @@
 FROM alpine:3.21
 
-COPY backend /usr/local/bin/backend
-COPY data/ /data/
+COPY ./code /usr/local/bin/backend
+COPY ./data/ /data/
 
 RUN chmod +x /usr/local/bin/backend
 
