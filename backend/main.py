@@ -1,0 +1,8 @@
+from fastapi import FastAPI
+
+app = FastAPI(title="Dash QTech API", version="0.1.0")
+
+
+@app.get("/hello")
+def hello() -> dict[str, str]:
+    return {"message": "Hola mundo"}
