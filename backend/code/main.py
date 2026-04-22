@@ -17,3 +17,12 @@ app.include_router(games.router)
 @app.get("/hello")
 def hello() -> dict[str, str]:
     return {"message": "Hola mundo"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+
+    port = int(os.getenv("BACKEND_PORT", 3000))
+
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
