@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from fastapi import APIRouter
 
-app = FastAPI(title="Dash QTech API", version="0.1.0")
+router = APIRouter()
 
 
-@app.get("/healthz")
+@router.get("/healthz", tags=["Health"])
 def healthz() -> dict[str, str]:
     return {"status": "ok"}
